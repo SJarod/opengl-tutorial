@@ -41,11 +41,12 @@ int main()
 
     while (!glfwWindowShouldClose(window))
     {
-        glfwSwapBuffers(window);
         glfwPollEvents();
 
+        // TODO : move these calls to encapsulated functions
         glViewport(0, 0, width, height);
 
+        // TODO : move these calls to encapsulated functions
         glClearColor(0.2f, 0.2f, 0.2f, 1.f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -59,6 +60,8 @@ int main()
 
         RHI::Render::bind_texture(tex);
         RHI::Render::draw_element_object(program, vao, ebo, indices.size());
+
+        glfwSwapBuffers(window);
     }
 
     WSI::destroy_window(window);
