@@ -115,7 +115,7 @@ inline GLuint create_shader_program(const char *vsSource, const char *fsSource)
     int success[2];
     char infoLog[2][512];
     glGetShaderiv(vs, GL_COMPILE_STATUS, &success[0]);
-    glGetShaderiv(vs, GL_COMPILE_STATUS, &success[1]);
+    glGetShaderiv(fs, GL_COMPILE_STATUS, &success[1]);
 
     if (!success[0] || !success[1])
     {
