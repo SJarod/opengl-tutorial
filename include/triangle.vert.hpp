@@ -16,6 +16,7 @@ const char *triangleVertSrc = R"GLSL(
     
     void main()
     {
+        // TODO : mvp matrices should be computed on cpu
         gl_Position = proj * view * model * vec4(aPos, 1.0);
         fragColor = aColor;
         fragUV = aUV;

@@ -54,6 +54,7 @@ int main()
         glm::mat4 view = glm::lookAt(glm::vec3(0.f, 1.f, 1.f), glm::vec3(0.f), glm::vec3(0.f, 1.f, 0.f));
         glm::mat4 proj = glm::perspective(glm::radians(45.f), width / (float)height, 0.1f, 1000.f);
 
+        // TODO : compute mvp matrices before hand
         RHI::Shader::set_uniform_matrix4(program, "model", model);
         RHI::Shader::set_uniform_matrix4(program, "view", view);
         RHI::Shader::set_uniform_matrix4(program, "proj", proj);
